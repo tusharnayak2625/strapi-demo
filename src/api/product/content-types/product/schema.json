@@ -35,30 +35,6 @@
         "images"
       ]
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "tshirt",
-        "sports",
-        "mug",
-        "hoodie"
-      ],
-      "required": true
-    },
-    "size": {
-      "type": "enumeration",
-      "enum": [
-        "regular",
-        "xs",
-        "s",
-        "md",
-        "l",
-        "xl",
-        "xxl"
-      ],
-      "required": false,
-      "default": "regular"
-    },
     "color": {
       "type": "enumeration",
       "enum": [
@@ -82,6 +58,12 @@
     "qty": {
       "type": "integer",
       "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
     }
   }
 }
